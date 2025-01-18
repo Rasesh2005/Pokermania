@@ -19,6 +19,8 @@ class User(AbstractUser):
         help_text="Specific permissions for this user.",
         verbose_name="user permissions",
     )
+    # google_id = models.CharField(max_length=255, unique=True, null=True, blank=True)
+    # profile_picture = models.URLField(max_length=500, null=True, blank=True)
 
 
 class Bot(models.Model):

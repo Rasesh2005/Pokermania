@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth import get_user_model,logout, authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render,redirect
+import re
 
 
 User = get_user_model()
@@ -67,7 +68,7 @@ def upload_bot(request):
     bot_name = request.POST.get('name')
     bot_file = request.FILES['file']
 
-    new_bot = Bot.objects.create(user=user, name=bot_name, file=bot_file, chips=10000)
+    new_bot = Bot.objects.create(user=user, name=bot_name, file=bot_file)
 
     existing_bots = Bot.objects.exclude(user=user)
 

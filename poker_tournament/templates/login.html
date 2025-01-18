@@ -46,6 +46,8 @@ Login/Signup - PokerBots Arena
                         <label for="loginPassword">Password</label>
                         <input type="password" name="password" id="loginPassword" required autocomplete="new-password">
                     </div>
+                    {% load socialaccount %}
+                    <a href="{% provider_login_url 'google' %}?next=/">Login With Google</a>
                     <button type="submit" class="red">Login</button>
                     <div class="form-footer">
                         <a href="#">Forgot password?</a>
